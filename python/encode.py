@@ -5,11 +5,11 @@ def main():
     global model,encoder
     model = Model()
     encoder = Encoder()
-    with open("test.txt") as f:
+    with open("25_alpha.txt") as f:
         for line in f:
             if doLine(line):
                 break
-    encoder.encode_symbol(EOF_SYMBOL, model.total_freq)
+    encoder.encode_symbol(model.EOF_SYMBOL, model.total_freq)
     encoder.done_encoding()
 
 def doLine(line):

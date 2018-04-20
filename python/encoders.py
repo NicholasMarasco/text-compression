@@ -21,23 +21,19 @@ class Encoder:
         self.low  = self.low + (eRange*total_freq[symbol])/total_freq[0]
         while(True):
             if(self.high < Half):
-                print("high is low")
                 self.bit_plus_follow(0)
             elif(self.low >= Half):
-                print("low is high")
                 self.bit_plus_follow(1)
                 self.low -= Half
                 self.high -= Half
             elif(self.low >= First_qtr and self.high < Third_qtr):
-                print("other thing")
                 self.bits_to_follow += 1
                 self.low -= First_qtr
                 self.high -= First_qtr
             else:
                 break
-        print("We got out")
-        self.low  = 2*self.low
-        self.high = 2*self.high+1
+            self.low  = 2*self.low
+            self.high = 2*self.high+1
 
     def done_encoding(self):
         self.bits_to_follow += 1
