@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "model.h"
 
-main()
+main(int ARGC, char *ARGV[])
 {
   start_model();
   start_outputing_bits();
@@ -9,7 +9,7 @@ main()
   for(;;){
     int ch, symbol;
     FILE *file;
-    file = fopen("test.txt", "r")
+    file = fopen(ARGV[1], "r")
     ch = fgetc(file);
     if(ch == EOF) break;
     symbol = char_to_index[ch];

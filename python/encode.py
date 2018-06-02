@@ -1,11 +1,16 @@
 from encoders import Encoder
 from model import Model
+import argparse
 
 def main():
+    parser = argparse.ArgumentParser(description='Encode text file to binary')
+    parser.add_argument('file', metavar='<file>')
+    args = parser.parse_args()
+    finput = args.file
     global model,encoder
     model = Model()
     encoder = Encoder()
-    with open("25_alpha.txt") as f:
+    with open(finput) as f:
         for line in f:
             if doLine(line):
                 break

@@ -1,5 +1,5 @@
 from arithmetic import *
-from bit_io import *
+from bit_io import BitOutStream
 
 class Encoder:
 
